@@ -11,7 +11,7 @@ import "./App.css"; // Ensure this file exists
 
 function App() {
   return (
-    <>
+    <div className="roots">
       <Router>
         <Navbar />
         <Routes>
@@ -22,7 +22,7 @@ function App() {
           <Route path="/userprofile" element={<UserProfilePage />} />
         </Routes>
       </Router>
-    </>
+    </div>
   );
 }
 

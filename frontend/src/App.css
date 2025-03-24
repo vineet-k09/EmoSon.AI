@@ -1,0 +1,10 @@
+.roots {
+  /* background-color: aqua; */
+  max-width: 70vw;
+  margin: 0 auto;
+}
+
+:root {
+  display: flex;
+  justify-content: center;
+}

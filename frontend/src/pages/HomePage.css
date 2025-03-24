@@ -1,0 +1,13 @@
+section#about {
+    max-width: 70%;
+    margin: auto;
+}
+
+section#about p {
+    font-size: large;
+}
+
+section#login {
+    max-width: 70%;
+    margin: auto;
+}
