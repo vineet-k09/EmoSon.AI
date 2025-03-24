@@ -12,6 +12,11 @@ section#login {
     margin: auto;
 }
 
+section#emotions {
+    margin: auto;
+    max-width: 70%;
+}
+
 .emoji-container {
     display: flex;
     gap: 10px;

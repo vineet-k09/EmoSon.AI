@@ -115,7 +115,23 @@ app.get("/api/user", verifyToken, async (req, res) => {
     try {
         const user = await User.findById(req.user.id).select("-password"); // Exclude password
         if (!user) return res.status(404).json({ message: "User not found" });
-        return res.json({ user });
+
+
+        const postCount = await Post.countDocuments({ userId: user._id });
+        const totalLikes = await Post.aggregate([
+            { $match: { userId: user._id } },
+            { $group: { _id: null, totalLikes: { $sum: "$likes" } } }
+        ]);
+        // Fake reply count (random number)
+        const fakeReplyCount = Math.floor(Math.random() * 50); // Random between 10-50
+
+
+        return res.json({
+            user,
+            postCount,
+            totalLikes: totalLikes[0]?.totalLikes || 0,
+            fakeReplyCount
+        });
     } catch (err) {
         console.error("Error fetching user:", err);
         return res.status(500).json({ message: "Internal Server Error" });

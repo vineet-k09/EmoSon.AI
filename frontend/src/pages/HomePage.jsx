@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./HomePage.css";
-import {
-    Link,
-    //  useNavigate 
-} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
     const [user, setUser] = useState(null);
-    // const navigate = useNavigate();
 
     useEffect(() => {
         const storedUser = localStorage.getItem("user");
@@ -23,7 +19,6 @@ const HomePage = () => {
 
     const handleEmotionClick = (emotion) => {
         console.log(`User is feeling ${emotion}`);
-        // You can send this data to the backend for tracking user emotions
     };
 
     return (

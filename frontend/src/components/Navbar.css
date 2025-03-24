@@ -17,6 +17,11 @@ li {
     text-align: center;
 }
 
+.logout-btn {
+    padding: 5px !important;
+    padding-bottom: 10px !important;
+}
+
 a,
 .logout-btn {
     text-decoration: none;
@@ -54,5 +59,8 @@ a:hover,
 .logout-btn:hover {
     color: #ffffff;
     transform: scale(1.05);
-    background: rgba(255, 255, 255, 0.1);
+}
+
+a:active {
+    color: pink;
 }

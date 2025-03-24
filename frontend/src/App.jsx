@@ -24,10 +24,10 @@ function App() {
   return (
     <div className="roots">
       <Router>
-        <Navbar isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />
+        <Navbar isAuthenticated={isAuthenticated} />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
           <Route path="/Signup" element={<Signup />} />
           <Route path="/chatbot" element={<ChatbotPage />} />
           <Route path="/community" element={<CommunityPage />} />
