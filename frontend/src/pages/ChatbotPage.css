@@ -1,0 +1,10 @@
+.textboxing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.send {
+    max-height: 40px;
+    min-height: 40px;
+}

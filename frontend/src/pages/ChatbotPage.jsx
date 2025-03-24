@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import "./ChatBotPage.css";
 const ChatbotPage = () => {
     const [messages, setMessages] = useState([]);
     const [input, setInput] = useState("");
@@ -35,7 +35,7 @@ const ChatbotPage = () => {
                 ))}
             </div>
 
-            <div className="flex items-center mt-4">
+            <div className="flex items-center mt-4 textboxing">
                 <input
                     type="text"
                     className="flex-1 p-2 border rounded"
@@ -44,7 +44,7 @@ const ChatbotPage = () => {
                     onChange={(e) => setInput(e.target.value)}
                     onKeyPress={(e) => e.key === "Enter" && handleSend()}
                 />
-                <button className="ml-2 px-4 py-2 bg-blue-500 text-white rounded" onClick={handleSend}>
+                <button className="send ml-2 px-4 py-2 bg-blue-500 text-white rounded" onClick={handleSend}>
                     Send
                 </button>
             </div>
