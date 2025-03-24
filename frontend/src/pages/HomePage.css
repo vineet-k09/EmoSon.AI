@@ -17,6 +17,11 @@ section#emotions {
     max-width: 70%;
 }
 
+#bigText {
+    font-size: 11rem;
+    text-align: center;
+}
+
 .emoji-container {
     display: flex;
     gap: 10px;
