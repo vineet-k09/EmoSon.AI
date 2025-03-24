@@ -3,9 +3,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* width: 100vw; */
 }
-
 
 ul {
     list-style: none;
@@ -19,42 +17,42 @@ li {
     text-align: center;
 }
 
-a {
+a,
+.logout-btn {
     text-decoration: none;
     font-size: 1.2rem;
     font-weight: bold;
     color: #ffffff;
-    /* Metallic gold */
     transition: color 0.3s ease-in-out, transform 0.2s;
     display: block;
     padding: 10px;
     border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background: transparent;
 }
 
-a::after {
+/* Underline effect on hover (for links) */
+a::after,
+.logout-btn::after {
     content: "";
     position: absolute;
     left: 0;
     bottom: 5px;
-    /* Adjust if needed */
     width: 0;
-    /* Initially hidden */
     height: 2px;
     background-color: pink;
     transition: width 0.3s ease-in-out;
-    /* Smooth animation */
 }
 
-a:hover::after {
+a:hover::after,
+.logout-btn:hover::after {
     width: 100%;
-    /* Expands on hover */
 }
 
-a:hover {
+a:hover,
+.logout-btn:hover {
     color: #ffffff;
-    /* Bright metallic white */
     transform: scale(1.05);
-    /* Slight zoom effect */
     background: rgba(255, 255, 255, 0.1);
-    /* Soft highlight */
 }

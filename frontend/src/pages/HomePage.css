@@ -11,3 +11,22 @@ section#login {
     max-width: 70%;
     margin: auto;
 }
+
+.emoji-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.emoji {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.emoji:hover {
+    transform: scale(1.2);
+}

@@ -1,9 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./HomePage.css";
-import AuthPage from "../pages/AuthPage";
-import { Link } from "react-router-dom";
+import {
+    Link,
+    //  useNavigate 
+} from "react-router-dom";
 
 const HomePage = () => {
+    const [user, setUser] = useState(null);
+    // const navigate = useNavigate();
+
+    useEffect(() => {
+        const storedUser = localStorage.getItem("user");
+        if (storedUser) {
+            try {
+                setUser(JSON.parse(storedUser));
+            } catch (error) {
+                console.error("Error parsing user data:", error);
+                localStorage.removeItem("user");
+            }
+        }
+    }, []);
+
+    const handleEmotionClick = (emotion) => {
+        console.log(`User is feeling ${emotion}`);
+        // You can send this data to the backend for tracking user emotions
+    };
+
     return (
         <div>
             <section id="about">
@@ -20,9 +42,23 @@ const HomePage = () => {
                 </p>
             </section>
             <br /> <br />
-            <section id="login">
-                <AuthPage />
-            </section>
+
+            {user ? (
+                <section id="emotions">
+                    <h2>How are you feeling today?</h2>
+                    <div className="emoji-container">
+                        <button onClick={() => handleEmotionClick("love")} className="emoji">❤️</button>
+                        <button onClick={() => handleEmotionClick("angry")} className="emoji">😡</button>
+                        <button onClick={() => handleEmotionClick("happy")} className="emoji">😊</button>
+                        <button onClick={() => handleEmotionClick("sad")} className="emoji">😢</button>
+                        <button onClick={() => handleEmotionClick("normal")} className="emoji">😐</button>
+                    </div>
+                </section>
+            ) : (
+                <section id="login">
+                    <Link to="/login">Login here</Link>
+                </section>
+            )}
         </div>
     );
 };

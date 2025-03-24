@@ -1,22 +1,34 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
-import AuthPage from "./pages/AuthPage";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 import ChatbotPage from "./pages/ChatbotPage";
 import CommunityPage from "./pages/CommunityPage";
 import UserProfilePage from "./pages/UserPage";
 
-import "./App.css"; // Ensure this file exists
+import "./App.css";
 
 function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    // Check if user is already logged in
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsAuthenticated(true);
+    }
+  }, []);
+
   return (
     <div className="roots">
       <Router>
-        <Navbar />
+        <Navbar isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/auth" element={<AuthPage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/Signup" element={<Signup />} />
           <Route path="/chatbot" element={<ChatbotPage />} />
           <Route path="/community" element={<CommunityPage />} />
           <Route path="/userprofile" element={<UserProfilePage />} />
