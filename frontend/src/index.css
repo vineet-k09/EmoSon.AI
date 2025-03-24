@@ -12,7 +12,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
-  cursor: none;
+}
+
+:root::selection {
+  color: yellow;
+  background-color: none;
 }
 
 a {
