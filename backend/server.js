@@ -7,6 +7,7 @@ import mongoose from "mongoose";
 import authRoutes from "./routes/auth.js";
 import chatbotRoutes from "./routes/chatbot.js";
 import communityRoutes from "./routes/community.js";
+import userRoutes from "./routes/user.js";
 
 dotenv.config();
 
@@ -26,5 +27,6 @@ mongoose
 app.use("/api/auth", authRoutes);
 app.use("/api/chatbot", chatbotRoutes);
 app.use("/api/community", communityRoutes);
+app.user("api/user", userRoutes);
 
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
