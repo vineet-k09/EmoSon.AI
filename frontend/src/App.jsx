@@ -7,6 +7,8 @@ import Signup from "./pages/Signup";
 import ChatbotPage from "./pages/ChatbotPage";
 import CommunityPage from "./pages/CommunityPage";
 import UserProfilePage from "./pages/UserPage";
+import CustomCursor from './components/customCursor'; // adjust path as necessary
+
 
 import "./App.css";
 
@@ -20,9 +22,10 @@ function App() {
       setIsAuthenticated(true);
     }
   }, []);
-
   return (
     <div className="roots">
+
+      <CustomCursor />
       <Router>
         <Navbar isAuthenticated={isAuthenticated} />
         <Routes>

@@ -14,6 +14,11 @@
   margin: 0;
 }
 
+:root::selection {
+  color: yellow;
+  background-color: none;
+}
+
 a {
   font-weight: 500;
   color: #646cff;

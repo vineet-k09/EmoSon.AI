@@ -97,11 +97,12 @@ const CommunityPage = () => {
                             <div className="post-header">
                                 <img src={post.profilePic} alt="Profile" className="pfp" />
                                 <div>
-                                    <h3>{post.username}</h3>
+                                    <h2>{post.username}</h2>
                                     <small>{new Date(post.createdAt).toLocaleString()}</small>
                                 </div>
                             </div>
-                            <p>{post.content}</p>
+                            <hr />
+                            <p> Says 👀 ~{post.content}</p>
                             <button onClick={() => handleLike(post._id)}>❤️ {post.likes}</button>
                         </div>
                     ))

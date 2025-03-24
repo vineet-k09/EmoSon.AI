@@ -1,6 +1,9 @@
 section#about {
     max-width: 70%;
     margin: auto;
+    border: solid 1px white;
+    border-radius: 20px;
+    padding: 0 0 0 30px;
 }
 
 section#about p {
@@ -10,11 +13,24 @@ section#about p {
 section#login {
     max-width: 70%;
     margin: auto;
+    margin-bottom: 50px;
 }
 
 section#emotions {
     margin: auto;
     max-width: 70%;
+}
+
+#bigText {
+    font-size: 11rem;
+    text-align: center;
+    color: transparent;
+    background-image: url('bg.jpg');
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    padding-bottom: 19px;
+
 }
 
 .emoji-container {
@@ -34,4 +50,37 @@ section#emotions {
 
 .emoji:hover {
     transform: scale(1.2);
+}
+
+#login {
+    position: relative;
+    padding: 10px;
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    animation: border infinite ease-in;
+}
+
+#login {
+    animation: border 2s infinite ease-in;
+}
+
+@keyframes border {
+    0% {
+        border: 1px solid white;
+        box-shadow: 0 0 5px white;
+    }
+
+    50% {
+        border: 1px solid black;
+        box-shadow: 0 0 5px black;
+    }
+
+    100% {
+        border: 1px solid white;
+        box-shadow: 0 0 5px white;
+    }
 }
