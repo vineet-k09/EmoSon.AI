@@ -122,5 +122,69 @@ app.get("/api/user", verifyToken, async (req, res) => {
     }
 });
 
+
+//post system
+// ✅ Post Schema
+const postSchema = new mongoose.Schema({
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
+    username: { type: String, required: true },
+    profilePic: { type: String, default: "./public/userpfp.jpg" }, // Default PFP
+    content: { type: String, required: true },
+    likes: { type: Number, default: 0 },
+    createdAt: { type: Date, default: Date.now }
+});
+
+const Post = mongoose.model("Post", postSchema);
+
+// ✅ Create a New Post
+app.post("/posts", async (req, res) => {
+    const { userId, username, profilePic, content } = req.body;
+    console.log("Request Body:", req.body);
+    if (!userId || !username || !content) {
+        return res.status(400).json({ message: "All fields are required" });
+    }
+    if (!userId || !username || !content) {
+        console.log("Missing fields:", { userId, username, content });
+        return res.status(400).json({ message: "All fields are required" });
+    }
+    try {
+        const newPost = new Post({ userId: userId, username, profilePic, content });
+        await newPost.save();
+        return res.status(201).json(newPost);
+    } catch (error) {
+        console.error("Post Creation Error:", error);
+        return res.status(500).json({ message: "Failed to create post" });
+    }
+});
+
+// ✅ Get All Posts
+app.get("/posts", async (req, res) => {
+    try {
+        const posts = await Post.find().sort({ createdAt: -1 });
+        return res.json(posts);
+    } catch (error) {
+        console.error("Fetch Posts Error:", error);
+        return res.status(500).json({ message: "Failed to fetch posts" });
+    }
+});
+
+// ✅ Like a Post
+app.post("/posts/:postId/like", async (req, res) => {
+    try {
+        const post = await Post.findById(req.params.postId);
+        if (!post) return res.status(404).json({ message: "Post not found" });
+
+        post.likes += 1;
+        await post.save();
+
+        return res.json({ message: "Post liked", likes: post.likes });
+    } catch (error) {
+        console.error("Like Error:", error);
+        return res.status(500).json({ message: "Failed to like post" });
+    }
+});
+
+
+
 // Start Server
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
