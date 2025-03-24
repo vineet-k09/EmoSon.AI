@@ -1,0 +1,56 @@
+/* CustomCursor.css */
+.curContain {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    rotate: 45deg;
+    border: 2px solid #ffcc00;
+    left: 0;
+    transform: translate(-70%);
+    pointer-events: none;
+    transition: width 250ms, height 500ms;
+}
+
+.curContain.large {
+    height: 70px;
+    width: 70px;
+    transition: 0.1s;
+    rotate: -45deg;
+    transform: translate(0%, -70%);
+    border-radius: 50px !important;
+    opacity: .1;
+    background-color: white;
+    border: none;
+    z-index: 0;
+}
+
+/* Selected for cursor */
+.selected {
+    background-color: transparent;
+    position: fixed;
+    z-index: 1100;
+    border-radius: 50px;
+    border: 3px #ffcc00 solid;
+    pointer-events: none;
+    transition: .1s;
+}
+
+.cursor {
+    width: 10px;
+    height: 10px;
+    position: fixed;
+    background-color: #ffcc00;
+    z-index: 1100;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.displayNone {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    body {
+        cursor: auto;
+    }
+}
