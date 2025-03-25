@@ -1,5 +1,5 @@
-import streamlit as st
-import ollama
+import streamlit as st # type: ignore
+import ollama # type: ignore
 import base64
 
 st.set_page_config(page_title="Endxiety, your Mental Wellness Companion")
