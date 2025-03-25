@@ -1,0 +1,37 @@
+.bubble-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    pointer-events: none;
+    /* Make sure bubbles don't interfere with user interactions */
+}
+
+.bubble {
+    position: absolute;
+    bottom: 0;
+    border-radius: 50%;
+    animation: riseAndPop 3s ease-in-out infinite;
+    /* Initial rise animation */
+}
+
+@keyframes riseAndPop {
+    0% {
+        transform: translateY(0);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: translateY(-200px);
+        /* Moves the bubble up */
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: translateY(-250px);
+        /* Final position, simulating pop */
+        opacity: 0;
+        /* Bubble disappears at the top */
+    }
+}

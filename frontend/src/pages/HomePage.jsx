@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./HomePage.css";
 import { Link } from "react-router-dom";
+import BubbleEffect from "../components/BubbleEffect";
 
 const HomePage = () => {
     const [user, setUser] = useState(null);
@@ -55,6 +56,7 @@ const HomePage = () => {
                     <Link to="/login">Login here</Link>
                 </section>
             )}
+            <BubbleEffect />
         </div>
     );
 };
