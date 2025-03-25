@@ -1,5 +1,6 @@
 import React from 'react';
 import './ChatBotPage.css';
+import BubbleEffect from '../components/bubbleEffect';
 const ChatbotPage = () => {
     return (
         <div className='body'>
@@ -11,6 +12,7 @@ const ChatbotPage = () => {
                 height="600px"
                 style={{ border: "none" }}
             ></iframe>
+            <BubbleEffect />
         </div>
     );
 };

@@ -6,24 +6,6 @@ st.set_page_config(page_title="Endxiety, your Mental Wellness Companion")
 
 # Background Image
 
-def get_base64(background):
-    with open(background, "rb") as f:
-        data = f.read()
-    return base64.b64encode(data).decode()
-
-bin_str = get_base64("background.jpg")
-
-st.markdown(f"""
-        <style>
-            .main{{
-            background-image:url("data:image/png;base64,{bin_str}");
-            background-style: cover;
-            background-position: center;
-            background-repeat:no-repeat;
-
-            }}
-        </style>
-        """, unsafe_allow_html=True)
 
 st.session_state.setdefault('conversation_history', [])
 

@@ -10,6 +10,7 @@ import UserProfilePage from "./pages/UserPage";
 import CustomCursor from './components/customCursor'; // adjust path as necessary
 
 
+
 import "./App.css";
 
 function App() {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./HomePage.css";
 import { Link } from "react-router-dom";
-import BubbleEffect from "../components/BubbleEffect";
+import BubbleEffect from "../components/bubbleEffect";
 
 const HomePage = () => {
     const [user, setUser] = useState(null);

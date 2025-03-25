@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./UserPage.css";
+import BubbleEffect from "../components/bubbleEffect";
 
 const UserProfilePage = () => {
     const [user, setUser] = useState(null);
@@ -63,6 +64,7 @@ const UserProfilePage = () => {
                 <a href="/community" className="community-link">Go to Community</a>
 
             </div>
+            <BubbleEffect />
         </div>
     );
 };

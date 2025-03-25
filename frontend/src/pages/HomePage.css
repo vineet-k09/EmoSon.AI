@@ -19,6 +19,11 @@ section#login {
 section#emotions {
     margin: auto;
     max-width: 70%;
+    padding-left: 30px;
+    padding-top: 5px;
+    padding-bottom: 35px;
+    border: 1px solid white;
+    border-radius: 20px;
 }
 
 #bigText {
