@@ -5,13 +5,31 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #000000;
+  /* color: #1a1a1a; */
+  /* background-image: linear-gradient(to right, #ac19ac, #000000); */
+  background-image: linear-gradient(to right, #ac19ac 30%, #ee1b1b);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  animation: gradientAnimation 10s ease infinite;
   margin: 0;
+  background-size: 200% 200%;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 :root::selection {

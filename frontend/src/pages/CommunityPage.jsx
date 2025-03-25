@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./CommunityPage.css";
+import BubbleEffect from "../components/bubbleEffect";
 
 const CommunityPage = () => {
     const [user, setUser] = useState(null);
@@ -110,6 +111,7 @@ const CommunityPage = () => {
                     <p>No posts yet. Be the first to share something!</p>
                 )}
             </div>
+            <BubbleEffect />
         </div>
     );
 };
