@@ -26,11 +26,27 @@ section#emotions {
     text-align: center;
     color: transparent;
     background-image: url('bg.jpg');
-    background-size: cover;
+    background-size: stretch;
     background-clip: text;
     -webkit-background-clip: text;
     padding-bottom: 19px;
+    animation: moveBackground 30s infinite linear;
+}
 
+@keyframes moveBackground {
+    0% {
+        background-position: 0 30%;
+    }
+
+    50% {
+        background-position: 100% 0;
+        /* Move background to the right */
+    }
+
+    100% {
+        background-position: 0 -30%;
+        /* Reset to original position */
+    }
 }
 
 .emoji-container {
