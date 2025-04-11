@@ -34,6 +34,3 @@ This project is designed to provide **instant anonymous support**, **mood tracki
 - Gamified habit-building for mental health  
 - Mobile app version (React Native or Flutter)  
 - Dark mode & accessibility enhancements
-
-## 📁 Repository Structure
-
