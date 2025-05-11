@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './CustomCursor.css';
+import './customCursor.css';
 
 const CustomCursor = () => {
     const [elSelected,
