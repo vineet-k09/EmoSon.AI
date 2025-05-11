@@ -1,5 +1,5 @@
 import React from 'react';
-import './ChatBotPage.css';
+import './ChatbotPage.css';
 import BubbleEffect from '../components/bubbleEffect';
 const ChatbotPage = () => {
     return (
